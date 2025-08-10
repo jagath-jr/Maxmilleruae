@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALUCAD</title>
+  <link rel="icon" type="image/x-icon" href="titleImg.jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="common.css" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+
+<body>
+  <div id="headerWrapper">
+    <header class="top-bar" id="topBar">
+      <div class="contact">
+        <img src="images/call.png" alt="Call Icon" class="icon" /> +971 50993 3130, +971 2 639 0130
+      </div>
+      <div class="email">✉ info@alucaduae.ae</div>
+    </header>
+
+    <nav class="navbar" id="navbar">
+      <div class="logo">
+        <img src="LOGO.jpeg" alt="Alucad Logo" />
+      </div>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <div class="nav-right" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About us</a></li>
+          <li><a href="./services.html">Our Services</a></li>
+          <li><a href="./gallery.html">Gallery</a></li>
+        </ul>
+        <button onclick="location.href='./contacts.html'" class="btn-outline">Contact us</button>
+      </div>
+    </nav>
+  </div>
+
+  <section class="hero-slider">
+    <div class="slide active fade-in" data-anim="fade-in">
+      <img src="images/alu and glass.jpg" alt="Elegant architectural structures" />
+      <div class="caption-container">
+        <h1 class="caption">Aluminium and Glass</h1>
+        <p class="sub-caption">Engineered aluminium and glass solutions for durable, modern architectural applications.</p>
+      </div>
+    </div>
+    <div class="slide slide-left" data-anim="slide-left">
+      <img src="images/framless stru.jpg" alt="Sleek aluminium frames" />
+      <div class="caption-container">
+        <h1 class="caption">Frameless Structure</h1>
+        <p class="sub-caption">Discover sleek and strong aluminium frames for modern architectural spaces.</p>
+      </div>
+    </div>
+    <div class="slide slide-right" data-anim="slide-right">
+      <img src="images/doors and windowsss.jpg" alt="Modern aluminium doors" />
+      <div class="caption-container">
+        <h1 class="caption">Doors and Windows</h1>
+        <p class="sub-caption">Aluminium balances design beauty and industrial durability effortlessly.</p>
+      </div>
+    </div>
+    <div class="slide zoom-in" data-anim="zoom-in">
+      <img src="images/claddinggg.jpg" alt="Glass and aluminium design" />
+      <div class="caption-container">
+        <h1 class="caption">Cladding solution</h1>
+        <p class="sub-caption">Craft minimal glass-aluminium designs that redefine clarity and form.</p>
+      </div>
+    </div>
+    <div class="slide flip-in" data-anim="flip-in">
+      <img src="images/frameless.png" alt="Custom-built aluminium systems" />
+      <div class="caption-container">
+        <h1 class="caption">Architectural Features</h1>
+        <p class="sub-caption">Custom-built aluminium systems tailored to your architectural imagination.</p>
+      </div>
+    </div>
+    <div class="slide float-up" data-anim="float-up">
+      <img src="images/aluminium.png" alt="Aluminium building facades" />
+      <div class="caption-container">
+        <h1 class="caption">Handrails and Balustrodes</h1>
+        <p class="sub-caption">From façades to frameworks, aluminium lifts design to new levels.</p>
+      </div>
+    </div>
+    <div class="slider-dots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+      <span class="dot" data-index="3"></span>
+      <span class="dot" data-index="4"></span>
+      <span class="dot" data-index="5"></span>
+    </div>
+  </section>
+  <!-- ----------------------------------------->
+
+
+  
+      <section id="why-choose-us">
+          <div class="container">
+              <h2 class="section-title">Why Choose Alucad ?</h2>
+          </div>
+
+          <div class="features-container">
+              <div class="container">
+                  <div class="features-grid">
+                      <div class="feature-item">
+                          <div class="icon-circle"><i class="fa-solid fa-industry"></i></div>
+                          <p class="feature-title">Industry Expertise</p>
+                      </div>
+                      <div class="feature-item">
+                          <div class="icon-circle"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                          <p class="feature-title">Modern Tools</p>
+                      </div>
+                      <div class="feature-item">
+                          <div class="icon-circle"><i class="fa-solid fa-users-gear"></i></div>
+                          <p class="feature-title">Skilled Team</p>
+                      </div>
+                      <div class="feature-item">
+                          <div class="icon-circle"><i class="fa-solid fa-shield-halved"></i></div>
+                          <p class="feature-title">Reliable Service</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <script>
+          // The JavaScript remains the same
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add('is-visible');
+                  }
+              });
+          });
+
+          const itemsToAnimate = document.querySelectorAll('.feature-item');
+          itemsToAnimate.forEach((el) => observer.observe(el));
+      </script>
+
+  <!---------------------->
+
+  <section class="stats">
+    <div class="stat-box">
+      <div><span class="counter" data-target="400">0</span><span class="plus-sign">+</span></div>
+      <h4>Projects Completed</h4>
+      <p>ALUCAD has successfully delivered a diverse portfolio of prestigious projects across the UAE, providing high-performance architectural systems.</p>
+    </div>
+    <div class="stat-box">
+      <div><span class="counter" data-target="22">0</span><span class="plus-sign">+</span></div>
+      <h4>Years of Experience</h4>
+      <p>With its establishment in 2002, ALUCAD Aluminium & Glass LLC possesses 23 years of proven expertise in the architectural systems industry.</p>
+    </div>
+    <div class="stat-box">
+      <div><span class="counter" data-target="100">0</span><span class="plus-sign">%</span></div>
+      <h4>Client Satisfaction</h4>
+      <p>ALUCAD is dedicated to client satisfaction through a client-first approach, delivering fully customized solutions that exceed each project's unique requirements.</p>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container">
+      <h2>Featured Services</h2>
+      <div class="carousel-wrapper">
+        <div class="carousel-track">
+          <div class="service-card">
+            <div class="image" style="background-image: url('Our service images/Our product Img/Aluminium and Glass.png');"></div>
+            <div class="content">
+              <h4>Aluminium and Glass Systems</h4>
+              <p>We deliver premium aluminium and glass solutions, specializing in designing, fabricating, and installing curtain wall systems...</p>
+              <a href="services.html#aluminium-and-glass" class="btn-small">Read More</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="image" style="background-image: url('Our service images/Our product Img/Doors and windows Img.png');"></div>
+            <div class="content">
+              <h4>Doors and Windows</h4>
+              <p>Top-quality aluminium doors and windows built for performance, durability, and modern aesthetics, including sliding, hinged, and foldable...</p>
+              <a href="services.html#doors-and-windows" class="btn-small">Read More</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="image" style="background-image: url('Our service images/Our product Img/Cladding Solution Img.png');"></div>
+            <div class="content">
+              <h4>Cladding Solution</h4>
+              <p>Expert cladding solutions that combine protection, performance, and visual appeal, including aluminium composite panel (ACP)...</p>
+              <a href="services.html#cladding-solution" class="btn-small">Read More</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="image" style="background-image: url('Our service images/Our product Img/Frameless structure Img.png');"></div>
+            <div class="content">
+              <h4>Frameless Structures</h4>
+              <p>Sleek, modern frameless glass solutions for commercial and residential spaces, including office partitions, shower enclosures, and railings...</p>
+              <a href="services.html#frameless-structure" class="btn-small">Read More</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="image" style="background-image: url('Our service images/Our product Img/Handrails and Balustrades Img.png');"></div>
+            <div class="content">
+              <h4>Handrails and Balustrades</h4>
+              <p>High-quality handrails and balustrades that combine safety, durability, and modern design, including glass and stainless steel options...</p>
+              <a href="services.html#handrails-and-balustrades" class="btn-small">Read More</a>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="image" style="background-image: url('Our service images/Our product Img/Architectural Features Img.png');"></div>
+            <div class="content">
+              <h4>Architectural Features</h4>
+              <p>Custom architectural features that enhance style and functionality, including skylights, domes, pergolas, and decorative screens...</p>
+              <a href="services.html#architectural-features" class="btn-small">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="connect-section">
+      <div class="container-con">
+          <div class="connect-form">
+              <h2>Quick Connect</h2>
+              <form>
+                  <input type="text" placeholder="Name" required />
+                  <input type="tel" placeholder="Phone No" required />
+                  <input type="email" placeholder="Email" required />
+                  <select required>
+                      <option value="" disabled selected>Choose Service</option>
+                      <option>Aluminium and Glass</option>
+                      <option>Doors and Windows</option>
+                      <option>Cladding Solution</option>
+                      <option>Frameless Structure</option>
+                      <option>Handrails and Balustrades</option>
+                      <option>Architectural Feature</option>
+                  </select>
+                  <textarea placeholder="Your Message" rows="5" required></textarea>
+                  <button type="submit">Call Request</button>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <div id="whatsapp">
+    <a href="https://api.whatsapp.com/send?phone=+971509933130&text=Hello! I would like to know more about your products." target="_blank" class="wtsapp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-overlay">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h2>ALUCAD</h2>
+          <p>Specializing in advanced architectural aluminium and glass systems since 2002. We deliver excellence and innovation in every project.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About us</a></li>
+            <li><a href="./services.html">Our Services</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./contacts.html">Contact us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <p>
+            Musaffah, M37, Abu Dhabi, U.A.E.<br />
+            +971 50 993 3130<br />
+            +971 2 639 0130<br />
+            info@alucaduae.ae<br/>
+            gm@alucaduae.ae
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">&copy; 2025 ALUCAD. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

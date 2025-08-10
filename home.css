@@ -1,0 +1,532 @@
+/* Hero Slider */
+.hero-slider {
+  position: relative;
+  height: calc(100vh - 93px); /* Full viewport height minus header */
+  overflow: hidden;
+  background-color: #333; /* Fallback for slow-loading images */
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.caption-container {
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: white;
+  max-width: 50%;
+}
+
+.caption, .sub-caption {
+  opacity: 0;
+  white-space: normal;
+}
+
+.caption {
+  font-size: clamp(2rem, 4vw, 3.5rem); /* Responsive font size */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.sub-caption {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: #fff;
+}
+
+/* Animations for Captions */
+.slide.active .caption { animation: caption-in 1s ease 0.3s forwards; }
+.slide.active .sub-caption { animation: subcaption-in 1s ease 0.6s forwards; }
+
+@keyframes caption-in {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes subcaption-in {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/*-------------------------------------------*/
+
+
+
+/* ====================================================== */
+/* Styling for the "Why Choose Us" Section */
+/* ====================================================== */
+
+/* UPDATED: Removed left/right padding to allow the blue box to be full-width */
+#why-choose-us {
+    background-color: #ffffff;
+    padding-top: 60px;
+    padding-bottom: 60px; /* Padding now only on top and bottom */
+    text-align: center;
+}
+
+/* This container is now used for the title and inside the blue box */
+#why-choose-us .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Add padding here to keep content from touching edges */
+}
+
+/* Title Styling */
+#why-choose-us .section-title {
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* UPDATED: This is the BLUE BOX that holds the features */
+#why-choose-us .features-container {
+    background-color: #3b596d;
+    padding: 50px 0; /* Vertical padding only */
+    width: 100%; /* Ensure it takes full width */
+    /* border-radius is removed to make it a sharp rectangle */
+    transition: padding 0.3s ease;
+}
+
+/* Grid layout for the features */
+#why-choose-us .features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    align-items: start;
+    transition: gap 0.3s ease;
+}
+
+
+/* All other styles for icons, text, animation, and mobile views remain the same */
+
+#why-choose-us .feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+#why-choose-us .feature-item.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#why-choose-us .feature-item:nth-child(1) { transition-delay: 0.1s; }
+#why-choose-us .feature-item:nth-child(2) { transition-delay: 0.2s; }
+#why-choose-us .feature-item:nth-child(3) { transition-delay: 0.3s; }
+#why-choose-us .feature-item:nth-child(4) { transition-delay: 0.4s; }
+
+#why-choose-us .feature-item:hover {
+    transform: translateY(-10px);
+}
+
+#why-choose-us .icon-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#why-choose-us .icon-circle i {
+    font-size: 50px;
+    color: #3b596d;
+    transition: font-size 0.3s ease;
+}
+
+#why-choose-us .feature-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    transition: font-size 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    #why-choose-us .features-grid {
+        gap: 20px;
+    }
+
+    #why-choose-us .features-container {
+        padding: 30px 0;
+    }
+
+    #why-choose-us .icon-circle {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 15px;
+    }
+
+    #why-choose-us .icon-circle i {
+        font-size: 35px;
+    }
+
+    #why-choose-us .feature-title {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 420px) {
+    #why-choose-us .features-grid {
+        gap: 10px;
+    }
+
+    #why-choose-us .features-container {
+        padding: 25px 0;
+    }
+
+    #why-choose-us .icon-circle {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    #why-choose-us .icon-circle i {
+        font-size: 25px;
+    }
+
+    #why-choose-us .feature-title {
+        font-size: 0.7rem;
+        line-height: 1.2;
+    }
+}
+
+
+
+
+
+
+
+/*-----------------------------------------------*/
+
+/* Stats Section */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+  background-color: #f8f9fa;
+  margin-top: -76px;
+}
+
+.stat-box {
+  flex: 1 1 300px;
+  max-width: 350px;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: left;
+  color: #ffffff;
+  background: #506478;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  background-color: #083a6e;
+}
+
+.stat-box .counter {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.plus-sign {
+  font-size: 2rem;
+  font-weight: bold;
+  vertical-align: super;
+  margin-left: 2px;
+}
+
+.stat-box h4 {
+  font-size: 18px;
+  margin: 10px 0 10px;
+  font-weight: 600;
+}
+
+.stat-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Services Section */
+.services {
+  padding: 60px 0;
+}
+
+.services h2, .connect-form h2 {
+  text-align: center;
+  font-size: 32px;
+  color: #083a6e;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+}
+
+.service-card {
+  flex: 0 0 31.33%; /* 3 cards visible with gap */
+  margin-right: 2%;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-card .image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.service-card .content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allows content to fill space */
+}
+
+.service-card h4 {
+  font-size: 18px;
+  color: #00345d;
+  margin: 0 0 10px 0;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.6;
+  flex-grow: 1; /* Pushes button to bottom */
+  margin-bottom: 20px;
+}
+
+.btn-small {
+  text-decoration: none;
+  align-self: flex-start;
+  padding: 8px 16px;
+  font-size: 13px;
+  border-radius: 20px;
+  background-color: #083a6e;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-small:hover {
+  background-color: #062a4e;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+}
+
+.carousel-dots .dot {
+  background: #ccc;
+}
+
+.carousel-dots .dot.active {
+  background: #083a6e;
+}
+
+/* Quick Connect Section */
+/* Add this to your CSS to control the container's width */
+.container-con {
+  width: 100%;
+  max-width: 870px; /* Adjust as needed */
+  margin: 0 auto;
+  padding: 0 20px; /* Adds space on the sides for smaller screens */
+  box-sizing: border-box;
+}
+
+.connect-section {
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center;   /* Vertically center the content */
+  padding: 60px 0;     /* Padding on top/bottom, none on sides */
+  background-image: url('images/aluminium.png');
+  background-size: cover; /* Changed back to cover for a full-bleed background */
+  background-position: center;
+  min-height: 700px;
+
+  /* --- KEY CHANGES --- */
+  /* margin property removed */
+  /* border-radius property removed */
+}
+
+.connect-form {
+  flex: 0 1 500px; /* Set a max-width for the form */
+  background-color: #f8f9fa;
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* All other styles for form inputs, buttons, etc. remain the same */
+
+.connect-form input,
+.connect-form select,
+.connect-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.connect-form button {
+  width: 100%;
+  background-color: #083a6e;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.connect-form button:hover {
+  background-color: #062a4e;
+}
+
+
+/* --- Responsive Tablet Styles --- */
+@media (max-width: 1024px) {
+  .caption-container {
+    max-width: 65%;
+  }
+
+  .service-card {
+    flex-basis: 48%; /* 2 cards per view */
+    margin-right: 2%;
+  }
+}
+
+/* --- Responsive Mobile Styles --- */
+@media (max-width: 768px) {
+  .hero-slider {
+    height: 60vh; /* Adjust height for mobile */
+  }
+
+  .caption-container {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .sub-caption {
+    max-width: 100%;
+  }
+
+  .slider-dots {
+      bottom: 15px;
+  }
+
+  .stats {
+    padding: 40px 15px;
+    gap: 15px;
+  }
+
+  .services, .connect-section {
+      padding: 40px 0;
+  }
+
+  .service-card {
+    flex-basis: 100%; /* 1 card per view */
+    margin-right: 15px;
+  }
+
+  .carousel-wrapper {
+      padding: 0 15px; /* Add padding to see the side card peeking */
+  }
+
+  .connect-section {
+    flex-direction: column-reverse; /* Form first on mobile */
+    gap: 30px;
+  }
+
+  .connect-form {
+    padding: 30px 20px;
+  }
+}
