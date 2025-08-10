@@ -117,12 +117,12 @@
     font-size: 2.4rem;
     margin-bottom: 30px;
     font-weight: bold;
-    color: #333;
+    color: #932C14;
 }
 
 /* UPDATED: This is the BLUE BOX that holds the features */
 #why-choose-us .features-container {
-    background-color: #3b596d;
+    background-color: #A31F14;
     padding: 50px 0; /* Vertical padding only */
     width: 100%; /* Ensure it takes full width */
     /* border-radius is removed to make it a sharp rectangle */
@@ -179,7 +179,7 @@
 
 #why-choose-us .icon-circle i {
     font-size: 50px;
-    color: #3b596d;
+    color: #65150E;
     transition: font-size 0.3s ease;
 }
 
@@ -265,7 +265,7 @@
   border-radius: 16px;
   text-align: left;
   color: #ffffff;
-  background: #506478;
+  background: #A31F14;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
@@ -273,7 +273,7 @@
 .stat-box:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-  background-color: #083a6e;
+  background-color: #65150E;
 }
 
 .stat-box .counter {
@@ -308,7 +308,7 @@
 .services h2, .connect-form h2 {
   text-align: center;
   font-size: 32px;
-  color: #083a6e;
+  color: #A31F14;
   font-weight: 700;
   margin-bottom: 40px;
 }
@@ -361,7 +361,7 @@
 
 .service-card h4 {
   font-size: 18px;
-  color: #00345d;
+  color: #A31F14;
   margin: 0 0 10px 0;
 }
 
@@ -379,13 +379,13 @@
   padding: 8px 16px;
   font-size: 13px;
   border-radius: 20px;
-  background-color: #083a6e;
+  background-color: #A31F14;
   color: white;
   transition: background-color 0.3s ease;
 }
 
 .btn-small:hover {
-  background-color: #062a4e;
+  background-color: #65150E;
 }
 
 .carousel-dots {
@@ -400,14 +400,14 @@
 }
 
 .carousel-dots .dot.active {
-  background: #083a6e;
+  background: #A31F14;
 }
 
 /* Quick Connect Section */
 /* Add this to your CSS to control the container's width */
 .container-con {
   width: 100%;
-  max-width: 870px; /* Adjust as needed */
+  max-width: 43rem; /* Adjust as needed */
   margin: 0 auto;
   padding: 0 20px; /* Adds space on the sides for smaller screens */
   box-sizing: border-box;
@@ -454,7 +454,7 @@
 
 .connect-form button {
   width: 100%;
-  background-color: #083a6e;
+  background-color: #A31F14;
   color: white;
   border: none;
   padding: 15px;
@@ -465,7 +465,7 @@
 }
 
 .connect-form button:hover {
-  background-color: #062a4e;
+  background-color: #65150E;
 }
 
 

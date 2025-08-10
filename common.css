@@ -1,4 +1,11 @@
 /* General Body Styles */
+a {
+    text-decoration: none;
+    color: inherit; /* Keeps the parent's text color */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
 body {
   font-family: 'Segoe UI', sans-serif;
   color: #1a1a1a;
@@ -23,7 +30,7 @@ body {
 }
 
 .top-bar {
-  background: #083a6e;
+  background: #A31F14;
   color: white;
   padding: 5px 20px;
   display: flex;
@@ -57,7 +64,7 @@ body {
   display: none;
   font-size: 28px;
   cursor: pointer;
-  color: #083a6e;
+  color: #A31F14;
 }
 
 .nav-right {
@@ -83,11 +90,11 @@ body {
 }
 
 .nav-links li a:hover {
-  border-bottom: 2px solid #083a6e;
+  border-bottom: 2px solid #A31F14;
 }
 
 .btn-outline {
-  background: #083a6e;
+  background: #A31F14;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -98,7 +105,7 @@ body {
 }
 
 .btn-outline:hover {
-  background: #062a4e;
+  background: #610800;
 }
 
 /* Footer */
@@ -112,7 +119,7 @@ body {
 }
 
 .footer-overlay {
-  background-color: rgba(8, 58, 110, 0.85); /* Slightly more opaque for readability */
+  background-color: rgba(163, 31, 20, 0.85);/* Slightly more opaque for readability */
   padding: 60px 20px 20px;
 }
 
@@ -127,24 +134,32 @@ body {
 
 .footer-column {
   flex: 1;
-  min-width: 250px;
+  min-width: 18.75rem;
+}
+.footer-column1 {
+  flex: 1;
+  min-width: 18.75rem;
+  text-align: center;
 }
 
 .footer h2 {
-  font-size: 24px;
+  font-size: 1.3rem;
   margin-bottom: 16px;
   color: #fff;
 }
 
 .footer h3 {
-  font-size: 20px;
+  font-size: 1rem;
   margin-bottom: 16px;
   color: #fff;
+  display: inline-block;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 2px;
 }
 
 .footer p,
 .footer a {
-  font-size: 14px;
+  font-size: 0.87rem;
   color: #e0e0e0;
   line-height: 1.7;
   text-decoration: none;
@@ -165,7 +180,7 @@ body {
 }
 
 .footer ul li a:hover {
-  color: #fff;
+  color: #000000;
 }
 
 .footer-socials {
@@ -179,7 +194,7 @@ body {
   align-items: center;
   justify-content: center;
   background: white;
-  color: #083a6e;
+  color: #A31F14;
   width: 36px;
   height: 36px;
   border-radius: 50%;
