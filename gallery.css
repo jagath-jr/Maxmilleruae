@@ -5,12 +5,13 @@ body{
 }
 /* Hero Banner */
 .hero {
-  background: url('Gallery img/BgImage.jpg') center/cover no-repeat;
+  background: url('Our service images/BG_Construction & Demolition.webp') center/cover no-repeat;
   text-align: center;
   padding: 100px 20px;
   color: #fff;
   background-blend-mode: overlay;
-  background-color: rgba(0, 47, 95, 0.5);
+ border-radius: 20.28px;
+background: rgba(163, 31, 20, 0.74);
 }
 .hero h1 {
   font-size: 3rem;
@@ -180,16 +181,17 @@ font-size: 4rem;
   width:100vw;
 }
 .services-hero {
-    background-image: url('Our service images/Our services Bg.png');
+    background-image: url('Our service images/BG_Construction & Demolition.webp');
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .banner {
-    background-color: rgba(1, 44, 96, 0.85);
+    border-radius: 20.28px;
+background: rgba(163, 31, 20, 0.74);
     width: 100%;
     padding: 25px 0;
     text-align: center;
