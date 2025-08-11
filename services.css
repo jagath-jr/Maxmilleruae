@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Inter', sans-serif;
     color: #333;
@@ -14,17 +15,18 @@ body {
 }
 
 .services-hero {
-    background-image: url('Our service images/Our services Bg.png');
+    background-image: url('Our service images/Our services Bg.webp');
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .banner {
-    background-color: rgba(1, 44, 96, 0.85);
+   border-radius: 20.28px;
+background: rgba(163, 31, 20, 0.74);
     width: 100%;
     padding: 25px 0;
     text-align: center;
@@ -69,17 +71,20 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #0A3A60;
-    opacity: 0.9;
+    opacity: 0.79;
+background: var(--Color, #A31F14);
 }
 
 /* Section-specific backgrounds */
-.section-1 { background-image: url('Our service images/Our product Img/Our product Bg 1.png'); }
-.section-2 { background-image: url('Our service images/Our product Img/Our product Bg 2.png'); }
-.section-3 { background-image: url('Our service images/Our product Img/Our product Bg 3.png'); }
-.section-4 { background-image: url('Our service images/Our product Img/Our product Bg 4.png'); }
-.section-5 { background-image: url('Our service images/Our product Img/Our product Bg 5.png'); }
-.section-6 { background-image: url('Our service images/Our product Img/Our product Bg6.png'); }
+.section-1 { background-image: url('Our service images/BG_Aluminium and Glass.webp'); }
+.section-2 { background-image: url('Our service images/BG_Construction & Demolition.webp'); }
+.section-3 { background-image: url('Our service images/BG_Building Maintenance.webp'); }
+.section-4 { background-image: url('Our service images/BG_Swimming pool Maintenance.webp'); }
+.section-5 { background-image: url('Our service images/BG_Civil Works.webp'); }
+.section-6 { background-image: url('Our service images/BG_Interior & fit-Out Works.webp'); }
+.section-7 { background-image: url('Our service images/BG_MEP Works.webp'); }
+.section-8 { background-image: url('Our service images/BG_Steel Fabrication.webp'); }
+
 
 .our-product-container {
     display: flex;
