@@ -377,7 +377,7 @@ body {
     .footer-about .footer-tagline,
     .footer-links ul,
     .footer-contact ul {
-        text-align: center;
+        text-align: justify;
     }
 
     .footer-links ul {
