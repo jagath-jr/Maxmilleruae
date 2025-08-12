@@ -108,113 +108,6 @@ body {
   background: #610800;
 }
 
-/* Footer */
-.footer {
-  background-image: url('images/aluminium.png');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  font-family: 'Segoe UI', sans-serif;
-  position: relative;
-}
-
-.footer-overlay {
-  background-color: rgba(163, 31, 20, 0.85);/* Slightly more opaque for readability */
-  padding: 60px 20px 20px;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-column {
-  flex: 1;
-  min-width: 18.75rem;
-}
-.footer-column1 {
-  flex: 1;
-  min-width: 18.75rem;
-  text-align: center;
-}
-
-.footer h2 {
-  font-size: 1.3rem;
-  margin-bottom: 16px;
-  color: #fff;
-}
-
-.footer h3 {
-  font-size: 1rem;
-  margin-bottom: 16px;
-  color: #fff;
-  display: inline-block;
-  border-bottom: 1px solid #fff;
-  padding-bottom: 2px;
-}
-
-.footer p,
-.footer a {
-  font-size: 0.87rem;
-  color: #e0e0e0;
-  line-height: 1.7;
-  text-decoration: none;
-}
-
-.footer-column p {
-    text-align: justify;
-}
-
-.footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer ul li {
-  margin-bottom: 10px;
-}
-
-.footer ul li a:hover {
-  color: #000000;
-}
-
-.footer-socials {
-  margin-top: 20px;
-  display: flex;
-  gap: 12px;
-}
-
-.footer-socials a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  color: #A31F14;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  font-size: 16px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.footer-socials a:hover {
-  background: #f0f0f0;
-  transform: scale(1.1);
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 40px;
-  padding-top: 20px;
-  font-size: 14px;
-  color: #ccc;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
 
 /* WhatsApp Button */
 #whatsapp .wtsapp {
@@ -318,20 +211,6 @@ body {
       margin-top: 20px;
   }
 
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer-column p {
-      text-align: center;
-  }
-
-  .footer-socials {
-    justify-content: center;
-  }
-
   #whatsapp .wtsapp {
     width: 45px;
     height: 45px;
@@ -339,4 +218,187 @@ body {
     bottom: 15px;
     right: 15px;
   }
+}
+
+
+
+/*========Footer section=========*/
+/* General Footer Styling */
+.site-footer {
+    background-color: #A31F14;
+    color: #ffffff;
+    padding: 80px 0 0 0;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    height: 30rem;
+}
+
+/* Content Container */
+.site-footer .container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1.2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 7rem 1fr; /* Makes column 2 half the size of others */
+    gap: 20px 12rem; /* 60px horizontal gap, 20px vertical gap */
+    align-items: start;
+}
+
+.footer-column {
+    width: 100%;
+}
+
+/* Column 1: About & Social */
+.footer-about .footer-logo {
+    font-size: 0.875rem; /* 14px */
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.footer-about .footer-tagline {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+    text-align: justify;
+}
+
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Columns 2 & 3: Links & Contact */
+.footer-column h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #a0a0a0;
+}
+
+.footer-links ul,
+.footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: justify;
+}
+
+.footer-links li,
+.footer-contact li {
+    margin-bottom: 15px;
+}
+
+.footer-links a,
+.footer-contact a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #cccccc;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.footer-contact i {
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 5px;
+    color: #a0a0a0;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .footer-background-text {
+        top: 90%;
+    }
+
+    .site-footer {
+        padding: 60px 0 0 0;
+        height: 60rem;
+    }
+
+    .site-footer .container {
+        padding: 0 15px;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-column {
+        text-align: center;
+    }
+
+    .footer-about .footer-tagline,
+    .footer-links ul,
+    .footer-contact ul {
+        text-align: center;
+    }
+
+    .footer-links ul {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .footer-about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-contact li {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
 }
