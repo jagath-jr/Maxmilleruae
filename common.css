@@ -231,7 +231,6 @@ body {
     position: relative;
     overflow: hidden;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    height: 30rem;
 }
 
 /* Content Container */
@@ -256,8 +255,8 @@ body {
 
 /* Column 1: About & Social */
 .footer-about .footer-logo {
-    font-size: 0.875rem; /* 14px */
-    font-weight: 700;
+    font-size: 0.8rem; /* 14px */
+    font-weight: 800;
     color: #fff;
     margin-bottom: 15px;
 }
