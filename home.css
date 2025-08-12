@@ -89,6 +89,47 @@
   from { opacity: 0; transform: translateY(50px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+  z-index: 10;
+  transform: translateY(-50%);
+}
+
+.slider-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+/* Hide buttons on very small screens */
+@media (max-width: 480px) {
+  .slider-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
 /*-------------------------------------------*/
 
 
@@ -301,108 +342,184 @@
 }
 
 /* Services Section */
-.services {
-  padding: 60px 0;
-}
+/* Container for centering content */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.services h2, .connect-form h2 {
-  text-align: center;
-  font-size: 32px;
-  color: #A31F14;
-  font-weight: 700;
-  margin-bottom: 40px;
-}
+        /* Services Section Styling */
+        .services {
+            padding: 60px 0;
+        }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+        .services h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #A31F14;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
 
-.carousel-wrapper {
-  overflow: hidden;
-  position: relative;
-}
+        /* Carousel Wrapper */
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.7s ease-in-out;
-}
+        /* Carousel Track */
+        .carousel-track {
+            display: flex;
+            transition: transform 0.7s ease-in-out;
+        }
 
-.service-card {
-  flex: 0 0 31.33%; /* 3 cards visible with gap */
-  margin-right: 2%;
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-}
+        /* Service Card Styling */
+        .service-card {
+            flex: 0 0 calc(33.333% - 20px); /* Three cards visible with gap */
+            margin: 0 10px;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
 
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
-}
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+        }
 
-.service-card .image {
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-}
+        .service-card .image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
 
-.service-card .content {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Allows content to fill space */
-}
+        .service-card .content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
 
-.service-card h4 {
-  font-size: 18px;
-  color: #A31F14;
-  margin: 0 0 10px 0;
-}
+        .service-card h4 {
+            font-size: 18px;
+            color: #A31F14;
+            margin: 0 0 10px 0;
+        }
 
-.service-card p {
-  font-size: 14px;
-  color: #444;
-  line-height: 1.6;
-  flex-grow: 1; /* Pushes button to bottom */
-  margin-bottom: 20px;
-}
+        .service-card p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 20px;
+        }
 
-.btn-small {
-  text-decoration: none;
-  align-self: flex-start;
-  padding: 8px 16px;
-  font-size: 13px;
-  border-radius: 20px;
-  background-color: #A31F14;
-  color: white;
-  transition: background-color 0.3s ease;
-}
+        .btn-small {
+            text-decoration: none;
+            align-self: flex-start;
+            padding: 8px 16px;
+            font-size: 13px;
+            border-radius: 20px;
+            background-color: #A31F14;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
 
-.btn-small:hover {
-  background-color: #65150E;
-}
+        .btn-small:hover {
+            background-color: #65150E;
+        }
 
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  gap: 10px;
-}
+        /* Carousel Navigation Buttons */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
 
-.carousel-dots .dot {
-  background: #ccc;
-}
+        .carousel-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 
-.carousel-dots .dot.active {
-  background: #A31F14;
-}
+        .carousel-btn.prev {
+            left: 15px;
+        }
 
+        .carousel-btn.next {
+            right: 15px;
+        }
+
+
+        /* Carousel Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 10px;
+        }
+
+        .carousel-dots .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-dots .dot.active {
+            background: #A31F14;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .service-card {
+                flex: 0 0 calc(50% - 20px); /* Two cards on tablets */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-card {
+                flex: 0 0 calc(100% - 20px); /* One card on mobile */
+            }
+
+            .carousel-btn {
+                top: auto;
+                bottom: -50px; /* Position buttons below on mobile */
+                transform: translateY(0);
+            }
+
+            .carousel-btn.prev {
+                left: 35%;
+                transform: translateX(-50%);
+            }
+
+            .carousel-btn.next {
+                right: 35%;
+                transform: translateX(50%);
+            }
+            
+            .services {
+                padding-bottom: 100px; /* Add space for buttons */
+            }
+        }
 /* Quick Connect Section */
 /* Add this to your CSS to control the container's width */
 .container-con {
