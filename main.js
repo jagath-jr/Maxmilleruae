@@ -377,3 +377,38 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('resize', () => updateCarousel(false));
   }
 });
+// script.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    // GSAP animation for the section title
+    gsap.from(".section-title-unique", {
+        opacity: 0,
+        y: -50,
+        duration: 1,
+        ease: "power3.out"
+    });
+
+    // GSAP animation for testimonial cards on load
+    gsap.from(".testimonial-card-unique", {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        ease: "power2.out",
+        stagger: 0.2, // Stagger the animation for each card
+        delay: 0.5 // Delay the start of card animations slightly
+    });
+
+    // Example of a hover effect using GSAP (optional, as CSS handles basic hover)
+    // You could use this for more complex interactive hover animations
+    document.querySelectorAll('.testimonial-card-unique').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            gsap.to(card, { scale: 1.02, duration: 0.2, ease: "power1.out" });
+        });
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, { scale: 1, duration: 0.2, ease: "power1.out" });
+        });
+    });
+
+    // Add more JavaScript interactivity here as needed
+    // For example, if you wanted to implement a carousel or a "read more" feature.
+});
