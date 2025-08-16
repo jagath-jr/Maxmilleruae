@@ -763,3 +763,202 @@
         font-size: 0.9em;
     }
 }
+
+
+/* =================================== */
+/* Services Section           */
+/* =================================== */
+
+.container-services {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.services-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #0059ff, #fc0505);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.services-subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 20px;
+}
+
+.service-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    color: white;
+    height: 240px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.service-box-01 { background-image: url('img/signage work.webp'); animation: fadeInUp 0.6s 0.1s forwards; }
+.service-box-02 { background-image: url('img/StainlesSteelWorks.webp'); animation: fadeInUp 0.6s 0.3s forwards; }
+.service-box-03 { background-image: url('img/Water Proofing.webp'); animation: fadeInUp 0.6s 0.5s forwards; }
+
+
+.service-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom right, rgba(163, 31, 20, 0.6), rgba(163, 31, 20, 0.6));
+    z-index: 1;
+}
+
+.service-content {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+    opacity: 0;
+    transition-delay: 0.2s;
+}
+
+.service-box.animate-in .service-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.service-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.service-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.service-description {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.service-box:hover {
+    transform: translateY(-5px) scale(1.02) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.service-box:hover .service-overlay {
+    background: linear-gradient(to bottom right, rgba(163, 31, 20, 0.8), rgba(163, 31, 20, 0.8));
+}
+
+.explore-more-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.explore-more-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(to right, #4A90E2, #D0028D);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.explore-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(74, 144, 226, 0.6);
+}
+
+.explore-more-btn:active {
+    transform: translateY(1px);
+}
+
+.explore-more-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 50%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(30deg);
+    transition: all 0.3s;
+}
+
+.explore-more-btn:hover::after {
+    left: 110%;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .service-box {
+        height: 200px;
+        animation-delay: 0s !important;
+        animation-duration: 0.5s !important;
+    }
+    .services-title {
+        font-size: 2rem;
+    }
+    .services-subtitle {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    .explore-more-container {
+        margin-top: 30px;
+    }
+    .explore-more-btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card-number {
+        top: 15px;
+        right: 15px;
+        font-size: 1.2rem;
+    }
+    .service-card-title {
+        font-size: 1.2rem;
+    }
+}

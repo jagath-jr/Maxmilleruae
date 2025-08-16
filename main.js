@@ -412,3 +412,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add more JavaScript interactivity here as needed
     // For example, if you wanted to implement a carousel or a "read more" feature.
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate service boxes when they come into view
+    const serviceBoxes = document.querySelectorAll('.service-box');
+    
+    // Function to check if element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.75 &&
+            rect.bottom >= 0
+        );
+    }
+    
+    // Function to handle scroll events
+    function checkBoxes() {
+        serviceBoxes.forEach(box => {
+            if (isInViewport(box)) {
+                box.classList.add('animate-in');
+            }
+        });
+    }
+    
+    // Initial check in case boxes are already in view
+    checkBoxes();
+    
+    // Check on scroll
+    window.addEventListener('scroll', checkBoxes);
+    
+    // For browsers that don't support Intersection Observer
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        serviceBoxes.forEach(box => {
+            observer.observe(box);
+        });
+    }
+});
