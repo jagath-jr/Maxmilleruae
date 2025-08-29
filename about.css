@@ -241,6 +241,7 @@ background: rgba(163, 31, 20, 0.74);
     font-size: 0.95rem;
     line-height: 1.6;
     opacity: 0.9;
+    text-align: justify;
 }
 
 /* What We Offer Section */
