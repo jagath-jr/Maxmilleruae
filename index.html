@@ -290,24 +290,29 @@ From concept to completion, our dedicated team combines innovative solutions, su
       <div class="container-con">
           <div class="connect-form">
               <h2>Quick Connect</h2>
-              <form>
-                  <input type="text" placeholder="Name" required />
-                  <input type="tel" placeholder="Phone No" required />
-                  <input type="email" placeholder="Email" required />
-                  <select required>
-                      <option value="" disabled selected>Choose Service</option>
-                      <option>Aluminium and Glass Works</option>
-                      <option>Construction & Demolition</option>
-                      <option>Building Maintenance</option>
-                      <option>Swimming pool Maintenance</option>
-                      <option>Civil Works</option>
-                      <option>Interior & fit-Out Works</option>
-                     <option>MEP Works</option> <option>Steel Fabrication</option>
+           <form id="contactForm">
 
-                  </select>
-                  <textarea placeholder="Your Message" rows="5" required></textarea>
-                  <button type="submit">Call Request</button>
-              </form>
+    <input type="text" id="name" placeholder="Name" required />
+    <input type="tel" id="phone" placeholder="Phone No" required />
+    <input type="email" id="email" placeholder="Email" required />
+
+    <select id="services" required>
+        <option value="" disabled selected>Choose Service</option>
+        <option>Aluminium and Glass Works</option>
+        <option>Construction & Demolition</option>
+        <option>Building Maintenance</option>
+        <option>Swimming pool Maintenance</option>
+        <option>Civil Works</option>
+        <option>Interior & fit-Out Works</option>
+        <option>MEP Works</option> 
+        <option>Steel Fabrication</option>
+    </select>
+
+    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+
+    <button type="submit" class="submit-btn">Call Request</button>
+    
+</form>
           </div>
       </div>
   </div>
@@ -377,6 +382,11 @@ From concept to completion, our dedicated team combines innovative solutions, su
   <script src="common.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script src="email.js"></script>
+
 </body>
 
 </html>
