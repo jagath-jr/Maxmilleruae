@@ -1003,7 +1003,7 @@
 
 @media (max-width: 480px) {
     .quote-text {
-        font-size: 1.8rem; /* Adjust font size for mobile phones */
+        font-size: 1.3rem; /* Adjust font size for mobile phones */
     }
 
     .excellence-quote footer {
