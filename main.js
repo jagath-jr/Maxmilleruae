@@ -460,3 +460,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// script.js
+
+// This file is ready for any future JavaScript-based interactivity.
+// For example, you could add event listeners to the logos.
+
+document.addEventListener('DOMContentLoaded', () => {
+    const logos = document.querySelectorAll('.slide img');
+
+    logos.forEach(logo => {
+        logo.addEventListener('click', () => {
+            // Example: Get the alt text of the clicked logo
+            const clientName = logo.alt.replace(' Logo', '');
+            console.log(`You clicked on the ${clientName} logo.`);
+            
+            // You can replace the console.log with any action,
+            // such as opening a new page or displaying a modal.
+            // window.open('https://example.com/clients/' + clientName, '_blank');
+        });
+    });
+
+    console.log("Trusted Clients section is interactive.");
+});
