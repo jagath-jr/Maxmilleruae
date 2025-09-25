@@ -655,7 +655,6 @@
     padding: 0 20px;
 }
 .clients-section {
-    padding: 60px 0;
     text-align: center;
     overflow: hidden; /* Important for the slider effect */
 }
@@ -663,7 +662,7 @@
 .section-title {
     font-size: 2.5rem;
     color: #a53f3f; /* Color extracted from the image */
-    margin-bottom: 50px;
+    
     font-weight: bold;
 }
 
@@ -684,14 +683,14 @@
     animation: scroll 30s linear infinite; /* Animation magic */
 }
 
-/* Pause animation on hover */
+/* Pause animation on hover 
 .logo-slider:hover .logo-track {
     animation-play-state: paused;
-}
+}*/
 
 .slide1 {
     width: 250px; /* Width of each slide item */
-    padding: 0 40px;
+   
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -705,7 +704,7 @@
     cursor: pointer;
 }
 
-.slide img:hover {
+.slide1 img:hover {
     filter: grayscale(0%); /* Full color on hover */
     transform: scale(1.1); /* Slightly enlarge on hover */
 }
