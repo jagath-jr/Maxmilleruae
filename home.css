@@ -730,9 +730,9 @@
         animation-duration: 25s; /* Speed up animation on smaller screens */
     }
 
-    .slide {
+    .slide1 {
         width: 200px;
-        padding: 0 20px;
+        
     }
 
     /* Adjust animation and track width for the new slide size */
