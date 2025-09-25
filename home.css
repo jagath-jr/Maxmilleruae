@@ -997,7 +997,7 @@
 /* ======== Responsive Design ======== */
 @media (max-width: 768px) {
     .quote-text {
-        font-size: 2.5rem; /* Adjust font size for tablets */
+        font-size: 1.03rem; /* Adjust font size for tablets */
     }
 }
 
