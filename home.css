@@ -963,6 +963,7 @@
 
 .quote-text {
     font-size: 3.5rem; /* Large font size for impact */
+    font-family: "Lora", serif;
     font-style: italic;
     color: #a53f3f; /* Reddish-brown color from the image */
     margin-bottom: 20px;
