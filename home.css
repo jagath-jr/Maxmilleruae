@@ -949,3 +949,63 @@
         font-size: 1.2rem;
     }
 }
+/* ======== Quote Section ======== */
+.quote-section {
+    
+    text-align: center;
+    width: 100%;
+}
+
+.excellence-quote {
+    border: none;
+    margin: 0;
+}
+
+.quote-text {
+    font-size: 3.5rem; /* Large font size for impact */
+    font-style: italic;
+    color: #a53f3f; /* Reddish-brown color from the image */
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 50;
+    line-height: 1.4;
+}
+
+.excellence-quote footer {
+    font-size: 1.2rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* ======== Animation Styling (for script.js) ======== */
+/* Style for individual characters wrapped in spans by JS */
+.quote-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Class added by JS to trigger the animation */
+.quote-text span.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+/* ======== Responsive Design ======== */
+@media (max-width: 768px) {
+    .quote-text {
+        font-size: 2.5rem; /* Adjust font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .quote-text {
+        font-size: 1.8rem; /* Adjust font size for mobile phones */
+    }
+
+    .excellence-quote footer {
+        font-size: 1rem;
+    }
+}
