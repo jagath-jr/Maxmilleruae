@@ -460,3 +460,81 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+// script.js
+
+// This file is ready for any future JavaScript-based interactivity.
+// For example, you could add event listeners to the logos.
+
+document.addEventListener('DOMContentLoaded', () => {
+    const logos = document.querySelectorAll('.slide img');
+
+    logos.forEach(logo => {
+        logo.addEventListener('click', () => {
+            // Example: Get the alt text of the clicked logo
+            const clientName = logo.alt.replace(' Logo', '');
+            console.log(`You clicked on the ${clientName} logo.`);
+            
+            // You can replace the console.log with any action,
+            // such as opening a new page or displaying a modal.
+            // window.open('https://example.com/clients/' + clientName, '_blank');
+        });
+    });
+
+    console.log("Trusted Clients section is interactive.");
+});
+
+// Wait for the document content to be fully loaded before running the script
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Select the paragraph element containing the quote
+    const quoteTextElement = document.querySelector('.quote-text');
+
+    // If the element doesn't exist on the page, stop the script
+    if (!quoteTextElement) {
+        return;
+    }
+
+    // --- 1. Prepare the text for animation ---
+    // This splits the quote into individual character `<span>` elements,
+    // but keeps them hidden initially by not adding the 'visible' class.
+    const text = quoteTextElement.textContent;
+    quoteTextElement.textContent = ''; // Clear original text
+    
+    text.split('').forEach(char => {
+        const span = document.createElement('span');
+        // Use a non-breaking space for space characters to ensure they take up space
+        span.textContent = char === ' ' ? '\u00A0' : char;
+        quoteTextElement.appendChild(span);
+    });
+
+    // --- 2. Create the function that runs the animation ---
+    const startAnimation = () => {
+        const charSpans = quoteTextElement.querySelectorAll('span');
+        charSpans.forEach((span, index) => {
+            // Set a timeout to add the 'visible' class sequentially, creating the effect
+            setTimeout(() => {
+                span.classList.add('visible');
+            }, index * 50); // 50ms delay between each character
+        });
+    };
+    
+    // --- 3. Set up the Intersection Observer ---
+    // This will watch the quote element and trigger a function when it enters the viewport.
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // Check if the element is intersecting (i.e., visible on screen)
+            if (entry.isIntersecting) {
+                startAnimation(); // If it is, run our animation
+                observer.unobserve(entry.target); // Then, stop observing to ensure it only runs once
+            }
+        });
+    }, {
+        // Options for the observer
+        root: null, // null means it observes in relation to the main browser viewport
+        threshold: 0.5 // Trigger when 50% of the element is visible
+    });
+
+    // --- 4. Start observing the quote element ---
+    observer.observe(quoteTextElement);
+
+});

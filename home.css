@@ -648,121 +648,108 @@
   }
 }
 
-
-
-/* Main Content Area */
-.main-content-unique {
-    padding: 20px;
+/*======------- Clients Section (Logo Carousel) ---------======*/
+.container1 {
     max-width: 1200px;
-    margin: 0 auto auto;
+    margin: 0 auto;
+    padding: 0 20px;
 }
-
-/* Testimonials Section */
-.testimonials-section-unique {
+.clients-section {
     text-align: center;
-    padding: 40px 0;
+    overflow: hidden; /* Important for the slider effect */
 }
 
-.section-title-unique {
-    color: #a83d3b; /* Reddish color from the image */
-    font-size: 2.5em;
-    margin-bottom: 50px;
-    animation: fadeInDown 1s ease-out; /* GSAP animation hint */
-}
-
-/* Testimonials Container - Grid for responsiveness */
-.testimonials-container-unique {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-    gap: 30px; /* Space between cards */
-    padding: 0 20px; /* Padding for smaller screens */
-}
-
-/* Testimonial Card Styling */
-.testimonial-card-unique {
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Distribute content vertically */
-    height: 80%; /* Ensure cards have equal height in a row */
-}
-
-.testimonial-card-unique:hover {
-    transform: translateY(-10px); /* Lift card on hover */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.testimonial-title-unique {
-    color: #a83d3b;
-    font-size: 1.5em;
-    margin-bottom: 15px;
-}
-
-.testimonial-text-unique {
-    color: #555;
-    font-size: 1em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    flex-grow: 1; /* Allows text to take up available space */
-}
-
-.testimonial-rating-unique {
-    color: #ffd700; /* Gold color for stars */
-    font-size: 1.2em;
-    margin-top: auto; /* Push rating and author to the bottom */
-}
-
-.star-unique {
-    display: inline-block;
-    margin-right: 2px;
-}
-
-.testimonial-author-unique {
-    color: #333;
+.section-title {
+    font-size: 2.5rem;
+    color: #a53f3f; /* Color extracted from the image */
+    
     font-weight: bold;
-    margin-top: 15px;
-    text-align: right;
-    font-size: 0.95em;
 }
 
-/* Responsive adjustments */
+/* ======== Logo Carousel Styling ======== */
+.logo-slider {
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    background: white;
+    /* Creates a faded edge effect */
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+    mask-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0));
+}
+
+.logo-track {
+    display: flex;
+    width: calc(250px * 10); /* (width of slide) * (number of slides) */
+    animation: scroll 30s linear infinite; /* Animation magic */
+}
+
+/* Pause animation on hover 
+.logo-slider:hover .logo-track {
+    animation-play-state: paused;
+}*/
+
+.slide1 {
+    width: 250px; /* Width of each slide item */
+   
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide1 img {
+    max-width: 100%;
+    height: auto;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.slide1 img:hover {
+    filter: grayscale(0%); /* Full color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* ======== Keyframes for the Infinite Scroll ======== */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 5)); /* (width of slide) * (number of original slides) */
+    }
+}
+
+
+/* ======== Responsive Design ======== */
 @media (max-width: 768px) {
-    .section-title-unique {
-        font-size: 2em;
+    .section-title {
+        font-size: 2rem;
     }
 
-    .testimonials-container-unique {
-        grid-template-columns: 1fr; /* Stack cards on smaller screens */
-        padding: 0 10px;
+    .logo-track {
+        animation-duration: 25s; /* Speed up animation on smaller screens */
     }
 
-    .testimonial-card-unique {
-        padding: 25px;
+    .slide1 {
+        width: 200px;
+        
+    }
+
+    /* Adjust animation and track width for the new slide size */
+    .logo-track {
+        width: calc(200px * 10);
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-200px * 5));
+        }
     }
 }
 
-@media (max-width: 480px) {
-    .section-title-unique {
-        font-size: 1.8em;
-    }
-
-    .testimonial-card-unique {
-        padding: 20px;
-    }
-
-    .testimonial-title-unique {
-        font-size: 1.3em;
-    }
-
-    .testimonial-text-unique {
-        font-size: 0.9em;
-    }
-}
 
 
 /* =================================== */
@@ -960,5 +947,66 @@
     }
     .service-card-title {
         font-size: 1.2rem;
+    }
+}
+/* ======== Quote Section ======== */
+.quote-section {
+    
+    text-align: center;
+    width: 100%;
+}
+
+.excellence-quote {
+    border: none;
+    margin: 0;
+}
+
+.quote-text {
+    font-size: 3.5rem; /* Large font size for impact */
+    font-family: "Lora", serif;
+    font-style: italic;
+    color: #a53f3f; /* Reddish-brown color from the image */
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: 50;
+    line-height: 1.4;
+}
+
+.excellence-quote footer {
+    font-size: 1.2rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* ======== Animation Styling (for script.js) ======== */
+/* Style for individual characters wrapped in spans by JS */
+.quote-text span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Class added by JS to trigger the animation */
+.quote-text span.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+/* ======== Responsive Design ======== */
+@media (max-width: 768px) {
+    .quote-text {
+        font-size: 1.03rem; /* Adjust font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .quote-text {
+        font-size: 1.3rem; /* Adjust font size for mobile phones */
+    }
+
+    .excellence-quote footer {
+        font-size: 1rem;
     }
 }
